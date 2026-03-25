@@ -91,8 +91,7 @@ def save_to_db_from_dataframe(df):
             warehouse_name VARCHAR(255),
             free_to_sell_amount INT,
             reserved_amount INT,
-            promised_amount INT,
-            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            promised_amount INT
         )
         """)
 
