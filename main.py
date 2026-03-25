@@ -8,11 +8,12 @@ from mysql.connector import Error
 load_dotenv()
 
 # CONFIG
+# Данные берутся из переменных окружения (.env)
 OZON_CLIENTS = {
     "Кутуев": [
         {
-            "client_id": "2266084",
-            "api_key": "6c7ded11-f31d-426a-ac5a-52883dbc65ff"
+            "client_id": os.getenv("OZON_CLIENT_ID"),
+            "api_key": os.getenv("OZON_API_KEY")
         }
     ]
 }
@@ -22,7 +23,7 @@ DB_CONFIG = {
     "user": os.getenv("DB_USER"),
     "password": os.getenv("DB_PASSWORD"),
     "database": os.getenv("DB_NAME"),
-    "port": int(os.getenv("DB_PORT"))
+    "port": int(os.getenv("DB_PORT", 3306))
 }
 
 
